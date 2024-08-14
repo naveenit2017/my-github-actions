@@ -28,8 +28,8 @@ jobs:
       - name: DockerHub Login
         run: |
               docker login
-              Username: naveen.it2017@gmail.com
-              Password: Saii@2025
+              username: naveen.it2017@gmail.com
+              password: Saii@2025
               docker push myimage:latest
 
 
