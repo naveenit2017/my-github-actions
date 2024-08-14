@@ -1,24 +1,20 @@
-name: Hello World
+name: This is my Hello World Program
 
-# Controls when the action will run
 on:
   push:
     branches:
-      - main  # Triggers the workflow on push to the main branch
+      - main    #triggers the action when it is pushed into main branch
+
   pull_request:
     branches:
-      - main  # Triggers the workflow on pull request to the main branch
+      - main  #Triggers the action when the pull request is triggered.
 
-# A workflow run is made up of one or more jobs
 jobs:
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest   #The type of runner the job will run on
+    steps:  #The sequence of tasks will executed on the ubuntu machine
+      - name: checkout code 
+        uses: actions/checkout@v3  #checkout the repository code
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3  # Check out the repository code
-
-      - name: Print Hello World
-        run: echo "Hello World"  # Run a simple Hello World command
+      - name: Print Hellow World
+        run: echo "Hello This is Naveen Varma"
