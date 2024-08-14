@@ -1,22 +1,15 @@
-name: This is my Hello World Program
-
-on:
-  push:
-    branches:
-      - main    #triggers the action when it is pushed into main branch
-
-  pull_request:
-    branches:
-      - main  #Triggers the action when the pull request is triggered.
-
-jobs:
+-name: This is my Sample project for Github Actions
+-on: push
+-jobs: 
   build:
-    runs-on: ubuntu-latest   #The type of runner the job will run on
-    steps:  #The sequence of tasks will executed on the ubuntu machine
-     
+    runs-on: ubuntu-lates
 
-      - name: Print Hellow World for naveen
-        run: echo "Hello This is Naveen Varma"
-      
-      - name: Thank you
-        run: echo "Hello My code is deployed successfully"
+    steps:
+      -name: checkout code
+      uses: actions/checkout@v3
+
+      -name: Print the statement
+      run: echo "my dear friend"
+
+      -name: Testing
+      run: echo "Testing is done"
