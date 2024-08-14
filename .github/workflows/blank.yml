@@ -34,6 +34,6 @@ jobs:
           password: Saii@2025
 
       - name: DockerHub Push
-        run: docker push myimage:latest
+        run: sudo docker push myimage:latest
               
 
