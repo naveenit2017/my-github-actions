@@ -25,11 +25,15 @@ jobs:
       - name: Docker Image build
         run: docker build -t myimage:latest .
 
-      - name: DockerHub Login
-        run: |
-              docker login
-              username: naveen.it2017@gmail.com
-              password: Saii@2025
-              docker push myimage:latest
+     
+              
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: naveen.it2017@gmail.com
+          password: Saii@2025
 
+      - name: DockerHub Push
+        run: docker push myimage:latest
+              
 
