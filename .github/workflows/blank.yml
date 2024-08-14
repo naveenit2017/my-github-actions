@@ -1,15 +1,16 @@
--name: This is my Sample project for Github Actions
--on: push
--jobs: 
+name: This is my Sample project for Github Actions
+on: push
+
+jobs: 
   build:
     runs-on: ubuntu-lates
 
     steps:
-      -name: checkout code
-      uses: actions/checkout@v3
-
-      -name: Print the statement
-      run: echo "my dear friend"
-
-      -name: Testing
-      run: echo "Testing is done"
+      - name: checkout code
+        uses: actions/checkout@v3
+    
+      - name: Print the statement
+        run: echo "my dear friend"
+      
+      - name: Testing
+        run: echo "Testing is done"
