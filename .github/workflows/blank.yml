@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: run python application
-        run: ../python my-app.py
+        run: ../../python my-app.py
     
       - name: Print the statement
         run: echo "my dear friend"
