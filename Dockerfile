@@ -1,8 +1,14 @@
-FROM python:3
-RUN pip install django==3.2
+# Use the official Python image from the Docker Hub
+FROM python:3.9-slim
 
-COPY . .
+# Set the working directory inside the container
+WORKDIR /app
 
-RUN python manage.py migrate
-EXPOSE 8000
-CMD ["python","manage.py","runserver","0.0.0.0:8000"]
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run the application
+CMD ["python", "app.py"]
