@@ -13,10 +13,17 @@ jobs:
         run: python my-app.py
         
       - name: Docker installation
-        run: sudo apt-get install docker.io
+        run: |
+            sudo apt update
+            sudo apt install apt-transport-https ca-certificates curl software-properties-common
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+            sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+            sudo apt install docker-ce
+            sudo systemctl status docker
+            sudo usermod -aG docker $USER
 
       - name: Check the Docker version
-        run: docker --version
+        run: sudo docker --version
     
       - name: Print the statement
         run: echo "my dear friend"
