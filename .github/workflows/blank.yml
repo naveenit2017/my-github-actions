@@ -1,38 +1,24 @@
-name: CI Workflow
+name: Hello World
 
-# This specifies when the workflow should run
+# Controls when the action will run
 on:
   push:
     branches:
-      - main  # Run this workflow on push to the main branch
+      - main  # Triggers the workflow on push to the main branch
   pull_request:
     branches:
-      - main  # Run this workflow on pull requests to the main branch
+      - main  # Triggers the workflow on pull request to the main branch
 
-# Define the jobs that run as part of this workflow
+# A workflow run is made up of one or more jobs
 jobs:
   build:
-    runs-on: ubuntu-latest  # Specify the environment the job should run on
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
-    # Define the steps of the job
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code
         uses: actions/checkout@v3  # Check out the repository code
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3  # Set up Node.js environment
-        with:
-          node-version: '18'  # Specify the Node.js version to use
-
-      - name: Install dependencies
-        run: npm install  # Install the project dependencies
-
-      - name: Run tests
-        run: npm test  # Run the project's tests
-
-      - name: Build the project
-        run: npm run build  # Build the project (if applicable)
-
-      - name: Lint the code
-        run: npm run lint  # Run a linter (if applicable)
-
+      - name: Print Hello World
+        run: echo "Hello World"  # Run a simple Hello World command
