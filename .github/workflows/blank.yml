@@ -1,5 +1,5 @@
 name: This is my Sample project for Github Actions
-#on: push
+on: push
 
 jobs: 
   build:
@@ -11,6 +11,12 @@ jobs:
 
       - name: run python application
         run: python my-app.py
+        
+      - name: Docker installation
+        run: sudo apt-get install docker.io
+
+      - name: Check the Docker version
+        run: docker --version
     
       - name: Print the statement
         run: echo "my dear friend"
