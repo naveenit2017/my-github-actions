@@ -1,5 +1,5 @@
 name: This is my Sample project for Github Actions
-on: push
+#on: push
 
 jobs: 
   build:
