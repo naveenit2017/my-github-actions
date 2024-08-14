@@ -13,8 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest   #The type of runner the job will run on
     steps:  #The sequence of tasks will executed on the ubuntu machine
-      - name: checkout code 
-        uses: actions/checkout@v3  #checkout the repository code
+     
 
       - name: Print Hellow World
         run: echo "Hello This is Naveen Varma"
