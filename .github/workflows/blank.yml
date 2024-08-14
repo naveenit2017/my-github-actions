@@ -17,3 +17,6 @@ jobs:
 
       - name: Print Hellow World for naveen
         run: echo "Hello This is Naveen Varma"
+      
+      - name: Thank you
+        run: echo "Hello My code is deployed successfully"
