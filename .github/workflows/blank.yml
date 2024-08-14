@@ -22,11 +22,13 @@ jobs:
             sudo systemctl status docker
             sudo usermod -aG docker $USER
 
-      - name: Check the Docker version
-        run: sudo docker --version
-    
-      - name: Print the statement
-        run: echo "my dear friend"
-      
-      - name: Testing
-        run: echo "Testing is done"
+      - name: Docker Image build
+        run: docker build -t myimage:latest .
+
+      - name: DockerHub Login
+        run: |
+              Username: naveen.it2017@gmail.com
+              Password: Saii@2025
+              docker push myimage:latest
+
+
