@@ -5,5 +5,12 @@ jobs:
     runs-on: ubuntu latest
 
     steps:
-      - name: Print the statement
-        run: echo "This is my first task
+     - name: Checkout code
+       uses: actions/checkout@v4
+
+     - name: Set up Python
+       uses: actions/setup-python@v4
+     - name: Test Python code
+       run:  echo "This is from naveen"
+
+
